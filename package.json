@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/Troncar78/os_pokeApi#readme",
   "dependencies": {
-    "jest": "^29.7.0"
+    "axios": "^1.7.2",
+    "axios-mock-adapter": "^1.22.0",
+    "jest": "^29.7.0",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",

@@ -1,4 +1,10 @@
+
+import getPokemonsByAbilityGroupedByType from './src/getPokemonsByAbilityGroupedByType.js';
 import getDetailedPokemonData from "./src/detailledPokemon.js";
+
+getPokemonsByAbilityGroupedByType('pound')
+    .then(result => console.log(result))
+    .catch(error => console.error(error));
 
 (async () => {
     try {

@@ -1,0 +1,29 @@
+{
+  "name": "os_pokeapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Troncar78/os_pokeApi.git"
+  },
+  "author": "Guillaume LAMIC, Gaspard CASTAGNET",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Troncar78/os_pokeApi/issues"
+  },
+  "homepage": "https://github.com/Troncar78/os_pokeApi#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "babel-jest": "^29.7.0",
+    "eslint": "^9.6.0",
+    "globals": "^15.8.0"
+  }
+}

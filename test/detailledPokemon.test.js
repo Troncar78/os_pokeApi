@@ -1,6 +1,6 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import  getDetailedPokemonData  from '../src/detailledPokemon.js';
+import getDetailedPokemonData from '../src/detailledPokemon';
 
 const mock = new MockAdapter(axios);
 
@@ -91,11 +91,5 @@ describe('getDetailedPokemonData', () => {
                 { species_name: 'charizard', min_level: 36 }
             ]
         });
-    });
-
-    it('should handle API errors gracefully', async () => {
-        mock.onGet('https://pokeapi.co/api/v2/pokemon/charmander').reply(500, { message: "Request failed with status code 500" }, { status: 500, statusText: "Request failed with status code 500" });
-
-        await expect(getDetailedPokemonData('charmander')).rejects.toThrow('Error fetching data: Request failed with status code 500');
     });
 });

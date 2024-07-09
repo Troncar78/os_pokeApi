@@ -33,7 +33,7 @@ export default async function getPokemonsByAbilityGroupedByType(ability) {
 
         return typeGroups;
     } catch (error) {
-        console.error(error);
+        console.log('error in fetching');
         return {};
     }
 }

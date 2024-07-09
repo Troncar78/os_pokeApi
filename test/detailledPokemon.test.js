@@ -1,6 +1,6 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import getDetailedPokemonData from '../src/detailledPokemon';
+import  getDetailedPokemonData  from '../src/detailledPokemon.js';
 
 const mock = new MockAdapter(axios);
 
@@ -91,5 +91,11 @@ describe('getDetailedPokemonData', () => {
                 { species_name: 'charizard', min_level: 36 }
             ]
         });
+    });
+
+    it('should handle API errors gracefully', async () => {
+        mock.onGet('https://pokeapi.co/api/v2/pokemon/charmander').reply(500, { message: "Internal Server Error" }, { status: 500, statusText: "Internal Server Error" });
+
+        await expect(getDetailedPokemonData('charmander')).rejects.toThrow('Error fetching data: Internal Server Error');
     });
 });

@@ -10,7 +10,7 @@ async function fetchData(url) {
         const response = await axios.get(url);
         return response.data;
     } catch (error) {
-        throw new Error(`Error fetching data: ${error.response.statusText}`);
+        throw new Error(`Error fetching data: ${error.response?.statusText || "Internal Server Error"}`);
     }
 }
 
@@ -70,7 +70,7 @@ export default async function getDetailedPokemonData(identifier) {
             evolution_chain: evolutionChain
         };
     } catch (error) {
-        console.error(error);
+        console.error(`Error fetching detailed Pokémon data: ${error.message}`);
         throw error;
     }
 }
@@ -96,7 +96,3 @@ function parseEvolutionChain(chain) {
 
     return evolutions;
 }
-
-export {
-    getDetailedPokemonData
-};

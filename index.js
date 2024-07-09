@@ -1,7 +1,8 @@
 
 import getPokemonsByAbilityGroupedByType from './src/getPokemonsByAbilityGroupedByType.js';
 import getDetailedPokemonData from "./src/detailledPokemon.js";
-import getPokemonsByEvolutionChain from './src/getPokemonsByEvolutionChain.js';
+import getTopPokemonByStatGrouped from "./src/pokemonStatRanking.js";
+import getPokemonsByEvolutionChain from "./src/getPokemonsByEvolutionChain.js";
 
 getPokemonsByAbilityGroupedByType('pound')
     .then(result => console.log(result))
@@ -20,4 +21,11 @@ getPokemonsByAbilityGroupedByType('pound')
 getPokemonsByEvolutionChain('abra')
     .then(result => console.log(result))
     .catch(error => console.error(error));
-    
+
+getTopPokemonByStatGrouped('attack', 10)
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.error(JSON.stringify({ error: error.message }, null, 2));
+    });

@@ -1,6 +1,7 @@
 
 import getPokemonsByAbilityGroupedByType from './src/getPokemonsByAbilityGroupedByType.js';
 import getDetailedPokemonData from "./src/detailledPokemon.js";
+import getPokemonsByEvolutionChain from './src/getPokemonsByEvolutionChain.js';
 
 getPokemonsByAbilityGroupedByType('pound')
     .then(result => console.log(result))
@@ -15,3 +16,8 @@ getPokemonsByAbilityGroupedByType('pound')
         console.error('Failed to fetch detailed Pokémon data:', error);
     }
 })();
+
+getPokemonsByEvolutionChain('abra')
+    .then(result => console.log(result))
+    .catch(error => console.error(error));
+    

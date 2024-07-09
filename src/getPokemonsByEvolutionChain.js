@@ -58,3 +58,4 @@ function parseEvolutionChain(chain, evolutionDetails, evolutions) {
         parseEvolutionChain(evolution, evolution.evolution_details[0], evolutions);
     });
 }
+

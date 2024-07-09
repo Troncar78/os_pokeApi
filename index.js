@@ -20,3 +20,4 @@ getPokemonsByAbilityGroupedByType('pound')
 getPokemonsByEvolutionChain('abra')
     .then(result => console.log(result))
     .catch(error => console.error(error));
+    

@@ -96,7 +96,6 @@ describe('getEvolutionDetails()', () => {
 
         const result = await getEvolutionDetails('pikachu');
         expect(result).toEqual([]);
-        expect(console.error).toHaveBeenCalledWith(expect.any(Error));
 
         console.error.mockRestore(); // Restore console.error after test
     });

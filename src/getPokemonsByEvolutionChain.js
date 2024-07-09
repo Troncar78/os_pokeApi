@@ -26,7 +26,7 @@ export default async function getEvolutionDetails(pokemonName) {
         parseEvolutionChain(evolutionChain, null, evolutions);
         return evolutions;
     } catch (error) {
-        console.error(error);
+        console.error('error in fetching');
         return [];
     }
 }

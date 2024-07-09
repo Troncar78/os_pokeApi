@@ -62,7 +62,6 @@ describe('getTopPokemonByStatGrouped', () => {
     });
 
     it('should handle API errors gracefully', async () => {
-        // Mock API error response with statusText
         mock.onGet('https://pokeapi.co/api/v2/pokemon?limit=1000').reply(500, { message: "Request failed with status code 500" }, { statusText: "Request failed with status code 500" });
 
         const stat = 'attack';

@@ -20,7 +20,6 @@ getPokemonsByEvolutionChain('abra')
     .then(result => console.log(result))
     .catch(error => console.error(error));
 
-
 getTopPokemonByStatGrouped('attack', 10)
     .then(result => {
         console.log(result);

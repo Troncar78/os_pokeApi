@@ -94,8 +94,8 @@ describe('getDetailedPokemonData', () => {
     });
 
     it('should handle API errors gracefully', async () => {
-        mock.onGet('https://pokeapi.co/api/v2/pokemon/charmander').reply(500, { message: "Internal Server Error" }, { status: 500, statusText: "Internal Server Error" });
+        mock.onGet('https://pokeapi.co/api/v2/pokemon/charmander').reply(500, { message: "Request failed with status code 500" }, { status: 500, statusText: "Request failed with status code 500" });
 
-        await expect(getDetailedPokemonData('charmander')).rejects.toThrow('Error fetching data: Internal Server Error');
+        await expect(getDetailedPokemonData('charmander')).rejects.toThrow('Error fetching data: Request failed with status code 500');
     });
 });

@@ -10,7 +10,7 @@ async function fetchData(url) {
         const response = await axios.get(url);
         return response.data;
     } catch (error) {
-        throw new Error(`Error fetching data: ${error.response?.statusText || "Internal Server Error"}`);
+        throw new Error(`Error fetching data: ${error.response?.statusText || error.message}`);
     }
 }
 

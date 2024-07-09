@@ -3,6 +3,7 @@ import getPokemonsByAbilityGroupedByType from './src/getPokemonsByAbilityGrouped
 import getDetailedPokemonData from "./src/detailledPokemon.js";
 import getTopPokemonByStatGrouped from "./src/pokemonStatRanking.js";
 import getPokemonsByEvolutionChain from "./src/getPokemonsByEvolutionChain.js";
+import getBestPokemonByStatsInLocation from "./src/getBestPokemonByStatsInLocation.js"
 
 getPokemonsByAbilityGroupedByType('pound')
     .then(result => console.log(result))
@@ -15,6 +16,10 @@ getDetailedPokemonData('charmander')
     .catch(error => {
         console.error('Failed to get detailed Pokémon data:', error.message);
     });
+
+getBestPokemonByStatsInLocation('celadon-city')
+    .then(result => console.log(result))
+    .catch(error => console.error(error));
 
 getPokemonsByEvolutionChain('abra')
     .then(result => console.log(result))

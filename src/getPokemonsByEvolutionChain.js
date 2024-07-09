@@ -45,7 +45,11 @@ function parseEvolutionChain(chain, evolutionDetails, evolutions) {
         ? {
             evolve_to: species.name,
             ...(evolutionDetails.trigger && { trigger: evolutionDetails.trigger.name }),
-            ...(evolutionDetails.trigger?.name === 'level-up' && { minLevel: evolutionDetails.min_level }),
+            ...(evolutionDetails.trigger?.name === 'level-up' && {
+                ...(evolutionDetails.min_level && { minLevel: evolutionDetails.min_level }),
+                ...(!evolutionDetails.min_level && evolutionDetails.min_happiness && { minHappiness: evolutionDetails.min_happiness }),
+                ...(!evolutionDetails.min_level && evolutionDetails.time_of_day && { timeOfDay: evolutionDetails.time_of_day })
+            }),
             ...(evolutionDetails.trigger?.name === 'use-item' && { item: evolutionDetails.item.name })
         }
         : {
@@ -58,4 +62,3 @@ function parseEvolutionChain(chain, evolutionDetails, evolutions) {
         parseEvolutionChain(evolution, evolution.evolution_details[0], evolutions);
     });
 }
-
